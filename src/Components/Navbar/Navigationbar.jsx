@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { UserInfo } from "../UserInfo/UserInfo";
+import { NavLink } from "react-router-dom";
 export const Navigationbar = () => {
     const [dropDownState, setDropDownState] = useState(false);
     const dropDownMenuRef = useRef();
@@ -20,7 +21,7 @@ export const Navigationbar = () => {
             Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
         </li>
         <li className="group flex  cursor-pointer flex-col">
-            Services<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+            Products<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
         </li>
         <li className="group flex  cursor-pointer flex-col">
             About<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
@@ -34,7 +35,7 @@ export const Navigationbar = () => {
             Home
         </li>
         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-            Services
+            Products
         </li>
         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
             About
@@ -58,8 +59,12 @@ export const Navigationbar = () => {
                 {navLinksLg}
             </ul>
             <div className="flex items-center space-x-4">
-                <button className="rounded-lg bg-sky-500 px-3 py-2 text-md text-white duration-300 font-bold active:scale-95">SignIn</button>
-                <button className="rounded-lg bg-sky-500 px-3 py-2 text-md text-white duration-300 font-bold active:scale-95">SignUp</button>
+                <button className="rounded-lg bg-sky-500 px-3 py-2 text-md text-white duration-300 font-bold active:scale-95">
+                    <NavLink to='/login'>Sign In</NavLink>
+                </button>
+                <button className="rounded-lg bg-sky-500 px-3 py-2 text-md text-white duration-300 font-bold active:scale-95">
+                    <NavLink to='/register'>Sign Up</NavLink>
+                </button>
                 <div>
                     <UserInfo/>
                 </div>

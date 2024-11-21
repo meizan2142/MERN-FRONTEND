@@ -17,18 +17,18 @@ export const Navigationbar = () => {
     }, []);
 
     const navLinksLg = <>
-        <NavLink to='/' className="group flex  cursor-pointer flex-col">
-            Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </NavLink>
-        <NavLink to='/products' className="group flex  cursor-pointer flex-col">
-            Products<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </NavLink>
-        <NavLink to='/about' className="group flex  cursor-pointer flex-col">
-            About<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </NavLink>
-        <NavLink to='/contact' className="group flex  cursor-pointer flex-col">
-            Contact<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </NavLink>
+        <li>
+            <NavLink className={({ isActive }) => isActive ? 'group flex  cursor-pointer flex-col text-red-500 font-bold' : "group flex  cursor-pointer flex-col"} to='/'>Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-red-500 transition-all duration-300 group-hover:w-full"></span></NavLink>
+        </li>
+        <li>
+            <NavLink className={({ isActive }) => isActive ? 'group flex  cursor-pointer flex-col text-red-500 font-bold' : "group flex  cursor-pointer flex-col"} to='/products'>Products<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-red-500 transition-all duration-300 group-hover:w-full"></span></NavLink>
+        </li>
+        <li>
+            <NavLink className={({ isActive }) => isActive ? 'group flex  cursor-pointer flex-col text-red-500 font-bold' : "group flex  cursor-pointer flex-col"} to='/about'>About<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-red-500 transition-all duration-300 group-hover:w-full"></span></NavLink>
+        </li>
+        <li>
+            <NavLink className={({ isActive }) => isActive ? 'group flex  cursor-pointer flex-col text-red-500 font-bold' : "group flex  cursor-pointer flex-col"} to='/contact'>Contact Us<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-red-500 transition-all duration-300 group-hover:w-full"></span></NavLink>
+        </li>
     </>
     const navLinksSm = <>
         <NavLink to='/' className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
@@ -67,7 +67,7 @@ export const Navigationbar = () => {
                     <NavLink to='/register'>Sign Up</NavLink>
                 </button>
                 <div>
-                    <UserInfo/>
+                    <UserInfo />
                 </div>
             </div>
             <div ref={dropDownMenuRef} onClick={() => setDropDownState(!dropDownState)} className="relative flex transition-transform md:hidden">

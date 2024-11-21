@@ -12,7 +12,8 @@
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
-    "@mui/material": "^6.1.7",
+    "@mui/icons-material": "^6.1.8",
+    "@mui/material": "^6.1.8",
     "firebase": "^11.0.2",
     "flowbite-react": "^0.10.2",
     "localforage": "^1.10.0",

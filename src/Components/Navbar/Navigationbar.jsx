@@ -17,32 +17,33 @@ export const Navigationbar = () => {
     }, []);
 
     const navLinksLg = <>
-        <li className="group flex  cursor-pointer flex-col">
+        <NavLink to='/' className="group flex  cursor-pointer flex-col">
             Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
-        <li className="group flex  cursor-pointer flex-col">
-            Products<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
-        <li className="group flex  cursor-pointer flex-col">
-            About<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
-        <li className="group flex  cursor-pointer flex-col">
-            Contact<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
+        </NavLink>
+        <NavLink to='/products' className="group flex  cursor-pointer flex-col">
+            Products<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+        </NavLink>
+        <NavLink to='/about' className="group flex  cursor-pointer flex-col">
+            About<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+        </NavLink>
+        <NavLink to='/contact' className="group flex  cursor-pointer flex-col">
+            Contact<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+        </NavLink>
     </>
     const navLinksSm = <>
-        <li className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
+        <NavLink to='/' className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
             Home
-        </li>
-        <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
+        </NavLink>
+        <NavLink to='/products' className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
             Products
-        </li>
-        <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
+        </NavLink>
+        <NavLink to='/about' className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
             About
-        </li>
-        <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
+        </NavLink>
+        <NavLink to='/contact' className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
             Contact
-        </li>
+        </NavLink>
+
     </>
 
 

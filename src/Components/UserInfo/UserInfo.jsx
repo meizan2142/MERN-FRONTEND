@@ -24,7 +24,7 @@ export const UserInfo = () => {
                 />
             </button>
             <ul className={`${open ? 'visible translate-y-0 duration-300 w-full p-1 flex flex-col space-y-4 ' : 'invisible translate-y-4'} absolute top-12 z-50 w-full space-y-1 rounded-sm bg-sky-400 shadow-md`}>
-                <button><NavLink to='/dashboard' className='font-bold rounded-md bg-gray-700 p-1'>DashBoard</NavLink></button>
+                <button><NavLink to='/dashboard/users' className='font-bold rounded-md bg-gray-700 p-1'>DashBoard</NavLink></button>
                 <button className="bg-red-500 rounded-md font-bold">LogOut</button>
             </ul>
         </div>

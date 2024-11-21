@@ -7,6 +7,9 @@ import Products from "../Pages/Products/Products";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import DashBoard from "../Pages/DashBoard/DashBoard";
+import AllUsers from "../Pages/DashBoard/DashBoardComponents/Admin/AllUsers";
+import AddProducts from "../Pages/DashBoard/DashBoardComponents/Seller/AddProducts";
+import MyProducts from "../Pages/DashBoard/DashBoardComponents/Seller/MyProducts";
 
 export const router = createBrowserRouter([
     {
@@ -34,7 +37,22 @@ export const router = createBrowserRouter([
     {
         path: "/dashboard",
         element: <DashBoard />,
-        children: []
+        children: [
+            // Admin Routes are given below
+            {
+                path: '/dashboard/users',
+                element: <AllUsers/>
+            },
+            // Seller routes are given below
+            {
+                path: '/dashboard/addproducts',
+                element: <AddProducts/>
+            },
+            {
+                path: '/dashboard/myproducts',
+                element: <MyProducts/>
+            },
+        ]
     },
     {
         path: '/login',

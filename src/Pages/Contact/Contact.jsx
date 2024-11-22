@@ -7,7 +7,7 @@ const Contact = () => {
                     <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">We&apos;d love to hear from you!</p>
                 </div>
                 <form className="w-full space-y-6">
-                    <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-400">
+                    <div className="space-y-2 text-sm text-black">
                         <label className="block font-medium" htmlFor="name">
                             Name
                         </label>
@@ -19,7 +19,7 @@ const Contact = () => {
                             type="text"
                         />
                     </div>
-                    <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-400">
+                    <div className="space-y-2 text-sm text-black">
                         <label className="block font-medium" htmlFor="_email">
                             Email
                         </label>
@@ -31,12 +31,12 @@ const Contact = () => {
                             type="email"
                         />
                     </div>
-                    <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-400">
+                    <div className="space-y-2 text-sm text-black">
                         <label className="block font-medium" htmlFor="_message">
                             Message
                         </label>
                         <textarea
-                            className="min-h-[80px] w-full rounded border px-3 py-2 leading-tight focus:outline-none focus:ring-1 dark:border-zinc-700"
+                            className="min-h-[80px] w-full rounded border px-3 py-2 text-black"
                             id="_message"
                             placeholder="what's in your mind"
                             name="message"

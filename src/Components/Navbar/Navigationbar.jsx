@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { UserInfo } from "../UserInfo/UserInfo";
+// import { UserInfo } from "../UserInfo/UserInfo";
 import { NavLink } from "react-router-dom";
 export const Navigationbar = () => {
     const [dropDownState, setDropDownState] = useState(false);
@@ -54,7 +54,7 @@ export const Navigationbar = () => {
     return (
         <nav className="flex items-center justify-between bg-[#393E46] px-4 py-2 fixed w-full z-[10] text-white">
             <div className="scale-100 cursor-pointer rounded-2xl px-3 py-2 text-xl font-semibold text-white transition-all duration-200 hover:scale-110">
-                <h2>Logo</h2>
+                <h2>BUY<span className="text-sky-500">HIVE</span></h2>
             </div>
             <ul className="hidden items-center justify-center gap-10 md:flex">
                 {navLinksLg}
@@ -67,7 +67,7 @@ export const Navigationbar = () => {
                     <NavLink to='/register'>Sign Up</NavLink>
                 </button>
                 <div>
-                    <UserInfo />
+                    {/* <UserInfo /> */}
                 </div>
             </div>
             <div ref={dropDownMenuRef} onClick={() => setDropDownState(!dropDownState)} className="relative flex transition-transform md:hidden">

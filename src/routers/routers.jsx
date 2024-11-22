@@ -10,6 +10,7 @@ import DashBoard from "../Pages/DashBoard/DashBoard";
 import AllUsers from "../Pages/DashBoard/DashBoardComponents/Admin/AllUsers";
 import AddProducts from "../Pages/DashBoard/DashBoardComponents/Seller/AddProducts";
 import MyProducts from "../Pages/DashBoard/DashBoardComponents/Seller/MyProducts";
+import PrivateRoute from "../PrivateRoute.jsx/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <DashBoard />,
+        element: <PrivateRoute><DashBoard /></PrivateRoute>,
         children: [
             // Admin Routes are given below
             {

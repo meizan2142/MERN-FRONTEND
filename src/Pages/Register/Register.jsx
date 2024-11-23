@@ -123,13 +123,13 @@ export const Register = () => {
                     }
                 </div>
                 <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
-                    <label htmlFor="select" className="block font-bold text-black">
+                    <label htmlFor="role" className="block font-bold text-black">
                         Select Role
                     </label>
                     <select
                         className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:ring-1 text-black focus-visible:outline-none dark:border-zinc-700"
-                        id="select"
-                        {...register('select', { required: true })}
+                        id="role"
+                        {...register('role', { required: true })}
                     >
                         <option value="buyer">Buyer</option>
                         <option value="seller">Seller</option>

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 
 export const UserInfo = () => {
-    const {logOut, user} = useAuth()
+    const { logOut, user } = useAuth()
     const dropDownRef = useRef(null);
     const [open, setOpen] = useState(false);
 

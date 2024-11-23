@@ -1,13 +1,14 @@
+import Swal from "sweetalert2";
 import { useForm } from "react-hook-form"
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { useAuth } from "../../hooks/useAuth";
 import SocialLogIn from "../../Components/SocialLogIn/SocialLogIn";
+import axios from "axios";
 export const Register = () => {
     const { createUser } = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
-
     const {
         register,
         handleSubmit,
@@ -15,11 +16,28 @@ export const Register = () => {
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        createUser(data.email, data.password).then(() => {
-            navigate(location?.state ? location?.state : '/')
-        })
-        console.log(data);
-        
+        const email = data.email;
+        const role = data.role;
+        const name = data.name;
+        const image = data.image[0].name;
+        const wishlist = []
+        const userInfo = { email, role, name, image, wishlist }
+
+        createUser(data.email, data.password)
+            .then(() => {
+                axios.post('http://localhost:4000/users', userInfo).then(res => {
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-center",
+                            icon: "success",
+                            title: "Registered and stored.",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        navigate(location?.state ? location?.state : '/')
+                    }
+                })
+            })
     }
     return (
         <div className="mx-auto w-full max-w-md space-y-4 rounded-lg border bg-white p-10 my-36">
@@ -147,7 +165,7 @@ export const Register = () => {
                 <hr className="flex-1 border-gray-400" />
             </div>
             {/* Social icons */}
-            <SocialLogIn/>
+            <SocialLogIn />
         </div >
     )
 }

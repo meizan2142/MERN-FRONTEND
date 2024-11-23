@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import axios from 'axios';
 import { createContext, useEffect, useState } from "react"
 import auth from "../FirebaseConfig/firebase.config"
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
@@ -29,17 +30,30 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser) {
-                setUser(currentUser)
-                setLoading(false)
+                console.log("User logged in:", currentUser.email);
+                setUser(currentUser);
+                axios.post('http://localhost:4000/authentication', {
+                    email: currentUser.email,
+                })
+                .then((data) => {
+                    if (data.data) {
+                        localStorage.setItem("access-token", data?.data?.token);
+                        setLoading(false);
+                    }
+                });
+            } else {
+                console.log("User logged out, removed token");
+                setUser(null);
+                localStorage.removeItem("access-token");
+                setLoading(false);
             }
-            else {
-                setUser(null)
-            }
-        })
+        });
+    
         return () => {
-            unsubscribe()
-        }
-    }, [])
+            console.log("Unsubscribing from auth listener");
+            unsubscribe();
+        };
+    }, []);
 
     // LogOut
     const logOut = () => {
